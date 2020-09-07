@@ -68,6 +68,7 @@
     <table class="content-table">
       <thead>
         <tr>
+          <th>S.NO</th>
           <th>FOOD_ITEMS</th>
           <th>QUANTITY (ml)(g)</th>
           <th>CALORIES</th>
@@ -78,10 +79,11 @@
       <tbody>
         {% for dt in data %}
         <tr>
+          <td>{{dt.id}}</td>
           <td>{{dt.food_item}}</td>
-          <td>200</td>
-          <td>135</td>
-          <td>1</td>
+          <td>{{dt.quantity}}</td>
+          <td>{{dt.calories}}</td>
+          <td>{{dt.foodcat}}</td>
         </tr>
         {% endfor %}
       </tbody>
