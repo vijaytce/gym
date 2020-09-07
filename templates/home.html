@@ -6,8 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <h1>{{data.first_name}}</h1>
-    <h1>{{data.last_name}}</h1>
+    <h1>form</h1>
+<form  action="" method="post">   
+    {% csrf_token %}
+    <input type="text" name="firstname" placeholder="firstname">
+    <input type="text" name="lastname" placeholder="lastname">
+    <input type="submit" name="save" value="submit">
+</form>
+
+
+
 </body>
 </html>

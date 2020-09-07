@@ -29,6 +29,12 @@ class dataset(models.Model):
     quantity = models.IntegerField(blank=False)
     calories = models.IntegerField(blank=False)
     foodcat = models.CharField(max_length=200,choices=choices1)
-
-
     
+    
+    
+    def __str__(self):
+        return self.food_item
+
+class test(models.Model):
+    firstname = models.CharField(max_length=200)
+    lastname = models.CharField(max_length=200)

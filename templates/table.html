@@ -1,0 +1,90 @@
+<DOCTYPE html>
+    <html>
+    <head>
+    <title>DIET TABLE</title>
+    <style>
+    * {
+      font-family: sans-serif; /* Change your font family */
+    }
+    
+    .content-table {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      min-width: 400px;
+      border-radius: 5px 5px 0 0;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      margin-left:auto; 
+      margin-right:auto;
+      
+    }
+
+
+    
+    .content-table thead tr {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: left;
+      font-weight: bold;
+    }
+    h1{    
+      
+        color: #009879 ;    
+      } 
+      body{  
+            text-align: center;
+            background: rgb(174,238,184);
+            background: radial-gradient(circle, rgba(174,238,184,1) 0%, rgba(149,227,190,1) 36%, rgba(113,190,184,1) 63%, rgba(107,207,202,1) 100%);
+
+          }      
+    
+    .content-table th,
+    .content-table td {
+      padding: 12px 15px;
+    }
+    
+    .content-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    
+    .content-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+    
+    .content-table tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+    }
+    
+    .content-table tbody tr.active-row {
+      font-weight: bold;
+      color: #009879;
+    }
+    </style>
+    </head>
+    <body>
+        
+    <h1>DIET TABLE</h1>
+    <table class="content-table">
+      <thead>
+        <tr>
+          <th>FOOD_ITEMS</th>
+          <th>QUANTITY (ml)(g)</th>
+          <th>CALORIES</th>
+          <th>VEG/NON VEG(1)/(2)</th>
+        </tr>
+      </thead>
+     
+      <tbody>
+        {% for dt in data %}
+        <tr>
+          <td>{{dt.food_item}}</td>
+          <td>200</td>
+          <td>135</td>
+          <td>1</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </body>
+    </html>
