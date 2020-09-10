@@ -1,0 +1,21 @@
+{% extends "home/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% if user.is_authenticated %}
+
+        <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done!{{ user.username }}</h4>
+        <p>Aww yeah, you have successfully logged to Tcehallallocationportal </p>
+        <a href="{% url 'logout' %}">logout</a>
+        </div>
+
+    {% else %}
+
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Well done!user anonymous login!! </h4>
+        <p>Aww yeah, you have successfully logged to Tcehallallocationportal </p>
+        <a href="{% url 'login' %}">login</a>
+        </div>
+
+    {% endif %}
+{% endblock %}
