@@ -3,7 +3,8 @@ from .models import data,Name,test
 
 # Create your views here.
 
-def index (request):      
+def index (request):     
+        name =request.POST.get("")
                 
        
-        return render(request, template_name='login/profile.html')
+        return render(request, template_name='home.html')

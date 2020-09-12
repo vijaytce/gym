@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'data',
     'table',
+    'start',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -134,7 +135,7 @@ EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'tcehallallocation@gmail.com'
-EMAIL_HOST_PASSWORD = '7092853412'
+EMAIL_HOST_USER = 'itsshapetime2020@gmail.com'
+EMAIL_HOST_PASSWORD = 'admin@2020'
 
 

@@ -38,3 +38,15 @@ class dataset(models.Model):
 class test(models.Model):
     firstname = models.CharField(max_length=200)
     lastname = models.CharField(max_length=200)
+    
+class userdetails (models.Model):
+    name = models.CharField(max_length=200)
+    weight =models.BigIntegerField()
+    height =models.BigIntegerField()
+    age   =models.BigIntegerField()
+
+
+
+def __str__(self):
+    return self.name
+    

@@ -1,0 +1,179 @@
+<DOCTYPE html>
+    <html>
+    <head>
+    <title>home</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+
+    <style>
+			* {
+		margin: 0;
+		padding: 0;
+		align-self: center;
+
+		}
+		.box {
+		width: 100%;
+		height: 100vh;
+		background: rgb(21,20,65);
+        background: linear-gradient(0deg, rgba(21,20,65,1) 0%, rgba(49,97,154,1) 44%, rgba(83,227,238,1) 100%);
+		}
+		p {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		color: #fff;
+		font-family: 'lora';
+		font-weight: 900;
+		text-transform: uppercase;
+		font-size: 50px;
+		}
+		.box div {
+		height: 60px;
+		width: 60px;
+		position: absolute;
+		top: 10%;
+		left: 10%;
+		animation: animate 4s linear infinite;
+		background: rgba(255,255,255,.5);
+		border-radius: 15px;
+		}
+		.box div:nth-child(1) {
+		top: 20%;
+		left: 20%;
+		animation: animate 8s linear infinite;
+		}
+		.box div:nth-child(2) {
+		top: 26%;
+		left: 89%;
+		animation: animate 10s linear infinite;
+		}
+		.box div:nth-child(3) {
+		top: 80%;
+		left: 90%;
+		animation: animate 5s linear infinite;
+		}
+		.box div:nth-child(4) {
+		top: 65%;
+		left: 75%;
+		animation: animate 7s linear infinite;
+		}
+		.box div:nth-child(5) {
+		top: 90%;
+		left: 10%;
+		animation: animate 9s linear infinite;
+		}
+		.box div:nth-child(6) {
+		top: 30%;
+		left: 60%;
+		animation: animate 5s linear infinite;
+		}
+		.box div:nth-child(7) {
+		top: 70%;
+		left: 33%;
+		animation: animate 8s linear infinite;
+		}
+		.box div:nth-child(8) {
+		top: 75%;
+		left: 60%;
+		animation: animate 10s linear infinite;
+		}
+		.box div:nth-child(9) {
+		top: 23%;
+		left: 50%;
+		animation: animate 6s linear infinite;
+		}
+		.box div:nth-child(10) {
+		top: 35%;
+		left: 7%;
+		animation: animate 10s linear infinite;
+		}
+		@keyframes animate {
+		0% {
+		transform: scale(0) translateY(0) rotate(50deg);
+		}
+		100% {
+		transform: scale(1.6) translateY(-250px) rotate(360deg);
+		}
+		}
+	</style>
+	<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button1 {background-image: linear-gradient(to right, #16A085 0%, #F4D03F 51%, #16A085 100%);border-radius: 12px;}
+.button1:hover { background-position: right center; }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+</style>
+
+
+	</head>
+	<body>
+
+		<div class="box">
+			<div>
+
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<img src="/assets/health.png" alt="nutrition" class="center" style="width:128px;height:128px">
+		<div>
+		</div>
+		<div>
+		</div>
+		<div>
+		</div>
+		<div>
+		</div>
+		<div>
+		</div>
+		<div>
+		</div>
+		<div>
+		</div>
+		<div>
+		</div>
+		<div>
+		</div>
+		<form method="get" action="{% url 'login' %}">
+		<button class="button button1" type='submit' >GET STARTED</button>
+        </form>
+
+
+		</div>
+
+		<p>IT'S SHAPE TIME</p>
+		<div>
+
+		</div>
+
+
+    </body>
+	</html>

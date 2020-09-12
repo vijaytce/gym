@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="load.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Home</title>
+     <style>
+         body{
+  margin: 0;
+  padding: 0;
+  background: #34495e;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "montserrat",sans-serif;
+}
+
+.loading{
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-top: 10px solid #e74c3c;
+  position: relative;
+  animation: a1 2s linear infinite;
+}
+
+.loading::before,.loading::after{
+  content: '';
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.loading::before{
+  border-top: 10px solid #e67e22;
+  transform: rotate(120deg);
+}
+
+.loading::after{
+  border-top: 10px solid #3498db;
+  transform: rotate(240deg);
+}
+
+.loading span{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  color: #fff;
+  text-align: center;
+  line-height: 200px;
+  animation: a2 2s linear infinite;
+}
+
+@keyframes a1 {
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes a2 {
+  to{
+    transform: rotate(-360deg);
+  }
+}
+
+     </style>
+
+
+
+    <!-- scripts for auto redirect -->
+    <script>
+    function Redirect() {
+    window.location.href = "{% url 'login' %}";
+}
+
+document.write("");
+setTimeout(Redirect, 500);
+</script>
+<!-- end of redirect script -->
+</head>
+
+<body>
+<div class="loading">
+      <span>It's Shape Time</span>
+    </div>
+
+</body>
+</html>

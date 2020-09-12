@@ -9,3 +9,7 @@ def table (request):
     
     
     return render (request, 'table.html',{'data':data})    
+
+
+def startapp (request):
+    return render(request,'getstarted.html' )
