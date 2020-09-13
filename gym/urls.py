@@ -36,6 +36,6 @@ urlpatterns = [
     path('',include('start.urls')),
     path('userdata/',include('userdata.urls')),
     path('details/',include('details.urls')),
-    path('bmrcal/',include('bmrcal.urls')),
+    path('bmr/',include('bmrcal.urls')),
     
 ]

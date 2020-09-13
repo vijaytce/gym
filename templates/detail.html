@@ -48,25 +48,32 @@
 	</style>
 </head>
 <body>
-    
-    <div class="form">
+	
+	
+   
+    <div class="form" > 
+			
+		<form method="GET" action="{% url 'login' %}">
+			{%for dt in data%}
+        <h3>Name :{{dt.name}}<h3>
+		<h3>Age   :{{dt.age}}<h3>
+		<h3>Height:{{dt.height}}<h3>
+		<h3>Weight:{{dt.weight}}<h3>
+		<h3>BMI   :{{dt.bmi}}</h3>
+	
 
-    <form method="get" action="{% url 'register' %}">
-	    
-        <h3>Name  :<h3>
-		<h3>Age   :<h3>
-		<h3>Height:<h3>
-		<h3>Weight:<h3>
-		<h3>BMI   :</h3>
 		<br>
 		<br>
 		<h4>To know your BMR</h4>
 		
+			
+		<button type="submit" >BMR CALCULATOR </button> 
 		
-		<button type="submit" >BMR CALCULATOR</button>
-	</form>
-    
-    </div>
+	
+		
+	</div>
+	{%endfor%}
+</form>
+	
 </body>
 </html>
-                           

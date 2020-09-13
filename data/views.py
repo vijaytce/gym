@@ -7,4 +7,4 @@ def index (request):
                
                 
        
-                return render(request, template_name='login/profile.html')
+                return render(request, template_name='userdata.html')

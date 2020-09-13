@@ -3,7 +3,7 @@ from .models import userdata
 
 
 # Create your views here
-def userdata (request):
+def userdataa (request):
    
     if request.method=='POST':
         name=request.POST['name']
@@ -12,7 +12,7 @@ def userdata (request):
         height=request.POST['height']
         bmi=request.POST['bmi']
         print(name,age,weight,height,bmi)
-        num=userdata(name=name,age=age,weight=weight,height=height,bmi=bmi)
+        num=userdata.objects.create(name=name,age=age,weight=weight,height=height,bmi=bmi)
         num.save()
         
                 

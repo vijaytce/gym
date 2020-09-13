@@ -1,7 +1,6 @@
+{%load static%}
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Calorie Calculator</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
 
@@ -68,90 +67,9 @@
 	}
 
 	</style>
-	<Script>
-		var age = document.querySelector('input[name="age"]').value;
-	var height = document.querySelector('input[name="height"]').value;
-	var weight = document.querySelector('input[name="weight"]').value;
-	var activityLevel = document.querySelector('select[name="level"]').value;
-	var calculate = document.querySelector('#calculate');
-	var reset = document.querySelector('#reset');
-	var daily = document.querySelector('#daily');
-	var gender = document.querySelector('select[name="gender"]').value;
-
-
-	document.querySelector('select[name="gender');
-
-
-	function bmrWomen(w,h,a){
-		var bmr = 665 + (4.35*w)+(4.7*h)-(4.7*a);
-		return bmr;
-	}
-
-	function bmrMen(w,h,a){
-		var bmr = 66 + (6.23*w)+(12.7*h) - (6.8*a);
-		return bmr;
-	}
-
-	function calories(bmr,level){
-		if (level==0){
-			return bmr*1.375;
-		}
-
-		else if (level==1){
-			return bmr*1.55;
-		}
-
-		else if (level==2){
-			return bmr*1.725;
-		}
-
-		else if (level==3){
-			return bmr*1.9;
-		}
-	}
-
-	calculate.addEventListener("click", function(){
-
-		age = document.querySelector('input[name="age"]').value;
-		height = document.querySelector('input[name="height"]').value;
-		weight = document.querySelector('input[name="weight"]').value;
-		activityLevel = document.querySelector('select[name="level"]').value;
-		console.log
-		gender = document.querySelector('select[name="gender"]').value;
-		console.log(gender);
-
-		if (gender==0){
-			var bmr = Math.round(bmrMen(weight,height,age));
-			var activity = Math.round(calories(bmr,activityLevel));
-			daily.textContent = " You must consume " + activity + " calories to maintain your current weight"
-
-
-		}t
-
-		else if (gender==1){
-				var bmr = Math.round(bmrWomen(weight,height,age));
-				var activity = Math.round(calories(bmr,activityLevel));
-				daily.textContent = " You must consume " + activity + " calories to maintain your current weight"
-			}
-	}
-	);
-
-	reset.addEventListener("click", function(){
-		age = document.querySelector('input[name="age"]').value="";
-		height = document.querySelector('input[name="height"]').value="";
-		weight = document.querySelector('input[name="weight"]').value="";
-		activityLevel = document.querySelector('select[name="level"]').selectedIndex=0;
-		gender = document.querySelector('select[name="gender"]').selectedIndex = 0; //1 = option 2
-		daily.textContent = "";
-
-
-	});
-
-	</script>
 </head>
 <body>
 	<h1>Calorie Calculator</h1>
-
 	<div>
 		Gender <i class="fa fa-venus-mars" aria-hidden="true"></i>:
 		<select name="gender">
@@ -163,8 +81,8 @@
 	<div class="form-group row">
 	  <div class="measurements col-xs-2 center_div">
 	      <label>Age <i class="fa fa-hourglass-start" aria-hidden="true"></i></label><input type="text" name="age" class="form-control">
-	      <label>Height in Cm  <i class="fa fa-male" aria-hidden="true"></i></label><input type = "text" name="height" class="form-control">
-	      <label>Weight in Kg <i class="fa fa-anchor" aria-hidden="true"></i></label><input type="text" name="weight" class="form-control">
+	      <label>Height <i class="fa fa-male" aria-hidden="true"></i></label><input type = "text" name="height" class="form-control">
+	      <label>Weight <i class="fa fa-anchor" aria-hidden="true"></i></label><input type="text" name="weight" class="form-control">
 	  </div>
 	</div>
 
@@ -187,18 +105,18 @@
 		<button type="button" class="divider btn" id="calculate">Calculate BMI</button>
 		<button type="button" class="divider btn" id="reset">Reset</button>
 	</div>
-	<br>
-
-	<button type="button" class="divider btn" id="diet chart">GET YOUR DIET CHART</button>
-
-
 
 	<div>
 		<span id="daily"></span>
 	</div>
-	
+	<div>
+		<form method="GET" action="{% url 'table' %}"
+		</div>
+	<button type="submit" class="divider btn" id="diet chart">GET YOUR DIET CHART</button>
+</form>
+</div>
+	<script type="text/javascript" src="{% static 'bmr/bmr.js' %}"></script>
 
-	
 
 
 
