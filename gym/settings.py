@@ -26,7 +26,7 @@ SECRET_KEY = '0c3x35a8i-$va8n4bpv)tdckl$q(9!sve_btfq1qba-+jo@gfl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -34,7 +34,13 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'data',
     'table',
+    'getstarted',
+    'details',
+    'login',
+    'maintain',
     'start',
+    'bmrcal',
+    'userdata',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',

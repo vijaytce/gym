@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>details</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+		body{
+		padding: 0;
+		margin: 0;
+		background-image: linear-gradient(to left, #071223, #0e405b, #007592, #00aec1, #22ebe3);
+		background-size: cover;
+	}
+
+	
+	.form{
+		font-family: "Roboto", sans-serif;
+		position: relative;
+		z-index: 1;
+		background: #FFFFFF;
+		opacity: 99%;
+		max-width: 260px;
+		margin: 200px auto 100px;
+		padding: 20px 45px 30px 45px;
+		text-align: center;
+		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+		border-radius: 10px;
+	}
+.form button{
+    text-transform: uppercase;
+    outline: 0;
+    border-radius: 10px;
+    background: #1ADBE5;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form button:hover, .form button:active, .form button:focus{
+    background-color: #06C5CF;
+    transition: all 1s ease 0s;
+}
+
+
+	
+	</style>
+</head>
+<body>
+    
+    <div class="form">
+
+    <form method="get" action="{% url 'register' %}">
+	    
+        <h3>Name  :<h3>
+		<h3>Age   :<h3>
+		<h3>Height:<h3>
+		<h3>Weight:<h3>
+		<h3>BMI   :</h3>
+		<br>
+		<br>
+		<h4>To know your BMR</h4>
+		
+		
+		<button type="submit" >BMR CALCULATOR</button>
+	</form>
+    
+    </div>
+</body>
+</html>
+                           

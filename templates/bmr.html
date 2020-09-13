@@ -1,0 +1,206 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calorie Calculator</title>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+
+
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<style>
+		body {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 700;
+		color:white;
+		text-align: center;
+		margin-top: 10px;
+		background: rgb(21,20,65);
+        background: linear-gradient(0deg, rgba(21,20,65,1) 0%, rgba(49,97,154,1) 44%, rgba(83,227,238,1) 100%);
+		
+
+
+	}
+	
+	label {
+		display: block;
+	}
+
+	.measurements {
+		padding-top: 20px;
+		padding-bottom: 20px
+
+	}
+
+	.bottom {
+		padding-top: 10px;
+	}
+
+	h1 {
+		padding-bottom: 20px;
+	}
+
+	h2 {
+		font-weight: 700;
+	}
+
+	button {
+		background:rgb(226, 38, 38);
+		margin-left: 5px;
+		background-image:linear-gradient(to right, #1CD8D2 0%, #93EDC7 51%, #1CD8D2 100%);
+		
+	}
+	
+
+	.center_div{
+		margin: 0 auto;
+		width:20%;
+	}
+	.center {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 100%;
+	}
+
+	</style>
+	<Script>
+		var age = document.querySelector('input[name="age"]').value;
+	var height = document.querySelector('input[name="height"]').value;
+	var weight = document.querySelector('input[name="weight"]').value;
+	var activityLevel = document.querySelector('select[name="level"]').value;
+	var calculate = document.querySelector('#calculate');
+	var reset = document.querySelector('#reset');
+	var daily = document.querySelector('#daily');
+	var gender = document.querySelector('select[name="gender"]').value;
+
+
+	document.querySelector('select[name="gender');
+
+
+	function bmrWomen(w,h,a){
+		var bmr = 665 + (4.35*w)+(4.7*h)-(4.7*a);
+		return bmr;
+	}
+
+	function bmrMen(w,h,a){
+		var bmr = 66 + (6.23*w)+(12.7*h) - (6.8*a);
+		return bmr;
+	}
+
+	function calories(bmr,level){
+		if (level==0){
+			return bmr*1.375;
+		}
+
+		else if (level==1){
+			return bmr*1.55;
+		}
+
+		else if (level==2){
+			return bmr*1.725;
+		}
+
+		else if (level==3){
+			return bmr*1.9;
+		}
+	}
+
+	calculate.addEventListener("click", function(){
+
+		age = document.querySelector('input[name="age"]').value;
+		height = document.querySelector('input[name="height"]').value;
+		weight = document.querySelector('input[name="weight"]').value;
+		activityLevel = document.querySelector('select[name="level"]').value;
+		console.log
+		gender = document.querySelector('select[name="gender"]').value;
+		console.log(gender);
+
+		if (gender==0){
+			var bmr = Math.round(bmrMen(weight,height,age));
+			var activity = Math.round(calories(bmr,activityLevel));
+			daily.textContent = " You must consume " + activity + " calories to maintain your current weight"
+
+
+		}t
+
+		else if (gender==1){
+				var bmr = Math.round(bmrWomen(weight,height,age));
+				var activity = Math.round(calories(bmr,activityLevel));
+				daily.textContent = " You must consume " + activity + " calories to maintain your current weight"
+			}
+	}
+	);
+
+	reset.addEventListener("click", function(){
+		age = document.querySelector('input[name="age"]').value="";
+		height = document.querySelector('input[name="height"]').value="";
+		weight = document.querySelector('input[name="weight"]').value="";
+		activityLevel = document.querySelector('select[name="level"]').selectedIndex=0;
+		gender = document.querySelector('select[name="gender"]').selectedIndex = 0; //1 = option 2
+		daily.textContent = "";
+
+
+	});
+
+	</script>
+</head>
+<body>
+	<h1>Calorie Calculator</h1>
+
+	<div>
+		Gender <i class="fa fa-venus-mars" aria-hidden="true"></i>:
+		<select name="gender">
+			<option value="0" name="male">Male</option>
+			<option value="1" name="female">Female</option>
+		</select>
+	</div>
+
+	<div class="form-group row">
+	  <div class="measurements col-xs-2 center_div">
+	      <label>Age <i class="fa fa-hourglass-start" aria-hidden="true"></i></label><input type="text" name="age" class="form-control">
+	      <label>Height in Cm  <i class="fa fa-male" aria-hidden="true"></i></label><input type = "text" name="height" class="form-control">
+	      <label>Weight in Kg <i class="fa fa-anchor" aria-hidden="true"></i></label><input type="text" name="weight" class="form-control">
+	  </div>
+	</div>
+
+
+
+
+	<h2>How much do you exercise?</h2>
+	<div class="bottom">
+		Intensity <i class="fa fa-line-chart" aria-hidden="true"></i>:
+		<select name="level">
+			<option value="0">Light</option>
+			<option value="1">Moderate</option>
+			<option value="2">High</option>
+			<option value="3">Extremely</option>
+		</select>
+	</div>
+
+
+	<div class="measurements">
+		<button type="button" class="divider btn" id="calculate">Calculate BMI</button>
+		<button type="button" class="divider btn" id="reset">Reset</button>
+	</div>
+	<br>
+
+	<button type="button" class="divider btn" id="diet chart">GET YOUR DIET CHART</button>
+
+
+
+	<div>
+		<span id="daily"></span>
+	</div>
+	
+
+	
+
+
+
+</body>
+</html>
